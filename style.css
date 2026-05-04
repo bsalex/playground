@@ -1,0 +1,79 @@
+/* General styles start */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #e0c9a6;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: #444;
+  padding: 2em;
+}
+
+.playground__header {
+  flex: 0 auto;
+  margin-bottom: 1em;
+}
+
+.playground {
+  padding: 2em;
+  border: 2px solid #65615b;
+  flex: 1;
+}
+
+/* General styles end */
+
+/* Tabs visuals start */
+
+.tabs {
+  margin-bottom: 2em;
+}
+
+.tabs__headers {
+  border-bottom: 2px solid #555;
+  display: flex;
+}
+
+.tabs__header {
+  padding: 1em;
+  border: 1px solid #555;
+  user-select: none;
+  cursor: pointer;
+}
+
+.tabs__contents {
+  padding: 2em;
+  border: 1px solid #555;
+}
+
+/* Tabs visuals end */
+
+/* Tabs functional start */
+.tabs__hidden-state-input {
+  display: none;
+}
+
+.tabs:has(.tabs__header--1 input:checked) .tabs__header--1,
+.tabs:has(.tabs__header--2 input:checked) .tabs__header--2,
+.tabs:has(.tabs__header--3 input:checked) .tabs__header--3 {
+  font-weight: bold;
+  background-color: #555;
+  color: #e0c9a6;
+}
+
+.tabs__content {
+  display: none;
+}
+
+.tabs:has(.tabs__header--1 input:checked) .tabs__content--1,
+.tabs:has(.tabs__header--2 input:checked) .tabs__content--2,
+.tabs:has(.tabs__header--3 input:checked) .tabs__content--3 {
+  display: block;
+}
+/* Tabs functional end */
