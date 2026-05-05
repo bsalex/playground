@@ -5,12 +5,13 @@
     async function fetchData() {
         const response = await fetch('/api/data');
         const data = await response.json();
-        console.log(data);
+        return data;
     }
 
-    button.addEventListener('click', function(event) {
+    button.addEventListener('click', async function(event) {
         event.preventDefault();
-        output.innerHTML = 'Button was clicked!';
+        const data = await fetchData();
+        output.innerHTML = JSON.stringify(data, null, 4);
     });
 })();
 
