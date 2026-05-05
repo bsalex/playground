@@ -1,6 +1,6 @@
 // This function runs when someone visits the URL in a browser (GET request)
 export async function onRequestGet(context) {
-  const file = await context.env.MY_BUCKET.get("data.json");
+  const file = await context.env.r2data.get("data.json");
 
   if (!file) {
     return new Response("Data not found", { status: 404 });
@@ -24,7 +24,7 @@ export async function onRequestPost(context) {
     const newData = await context.request.json();
     
     // Save the data to R2
-    await context.env.MY_BUCKET.put("data.json", JSON.stringify(newData));
+    await context.env.r2data.put("data.json", JSON.stringify(newData));
 
     return new Response("Data updated", { status: 200 });
   } catch (error) {
