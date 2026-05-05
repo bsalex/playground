@@ -17,7 +17,8 @@
       "head_sampling_rate": 1
     }
   },
-  "pages_build_output_dir": ".",
+  "main": "./dist/_worker.js/index.js",
+  "assets": { "directory": "." },
   "compatibility_flags": [
     "nodejs_compat"
   ],
